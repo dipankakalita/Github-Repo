@@ -1,0 +1,14 @@
+<p-menubar [model]="items" class="menu">  
+    <ng-template pTemplate="start">
+        <img src="assets/logo.png" height="40" class="mx-2" routerLink="" style="cursor:pointer">
+    </ng-template>
+    
+    <form (submit)="search(input); $event.preventDefault()">
+        <div class="p-inputgroup mr-2">
+            <input type="text" pInputText class="p-inputtext-sm" placeholder="Github Username" #input>
+            <button type="submit" pButton pRipple icon="pi pi-search"
+                styleClass="p-button-warn"></button>
+        </div>
+    </form>
+</p-menubar>
+

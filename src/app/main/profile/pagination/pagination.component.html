@@ -1,0 +1,65 @@
+<div class="my-3" style="overflow-x: hidden;">
+    <div class="grid justify-content-around" *ngIf="allRepos.length == 0">
+        <div style="border:2px solid #ddd" class="col-11 md:col-5 my-3 flex flex-column justify-content-center p-3">
+            <p-skeleton width="20vw" height="30px" styleClass="mb-4 mt-2"></p-skeleton>
+            <p-skeleton width="35vw" height="20px" styleClass="mb-3"></p-skeleton>
+            <div class="flex flex-row">
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+            </div>
+        </div>
+        <div style="border:2px solid #ddd" class="col-11 md:col-5 my-3 flex flex-column justify-content-center p-3">
+            <p-skeleton width="20vw" height="30px" styleClass="mb-4 mt-2"></p-skeleton>
+            <p-skeleton width="35vw" height="20px" styleClass="mb-3"></p-skeleton>
+            <div class="flex flex-row">
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+            </div>
+        </div>
+        <div style="border:2px solid #ddd" class="col-11 md:col-5 my-3 flex flex-column justify-content-center p-3">
+            <p-skeleton width="20vw" height="30px" styleClass="mb-4 mt-2"></p-skeleton>
+            <p-skeleton width="35vw" height="20px" styleClass="mb-3"></p-skeleton>
+            <div class="flex flex-row">
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+            </div>
+        </div>
+        <div style="border:2px solid #ddd" class="col-11 md:col-5 my-3 flex flex-column justify-content-center p-3">
+            <p-skeleton width="20vw" height="30px" styleClass="mb-4 mt-2"></p-skeleton>
+            <p-skeleton width="35vw" height="20px" styleClass="mb-3"></p-skeleton>
+            <div class="flex flex-row">
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+                <p-skeleton width="60px" height="25px" styleClass="mb-2 mr-2"></p-skeleton>
+            </div>
+        </div>
+    </div>
+    <div class="grid justify-content-around" *ngIf="allRepos.length > 0">
+        <div class="col-11 md:col-5 my-3 flex flex-column justify-content-center p-3 repoBox"
+            *ngFor="let user of allRepos| paginate: { itemsPerPage: 10, currentPage: p, totalItems: public_repos }">
+            <h1 class="p-0 m-0 ">{{ user.name }}</h1>
+            <p *ngIf="user.description != '' && user.description != null">{{ user.description }}</p>
+            <div *ngIf="user.topics.length != 0">
+                <button pButton type="button" [label]="topics" class="p-button-sm mr-2 mb-2 px-2 py-1"
+                    *ngFor="let topics of user.topics"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- pagination number -->
+    <div class="flex justify-content-center align-items-center" *ngIf="public_repos == 0">
+        <p-skeleton *ngIf="''==''" width="40vw" height="30px" styleClass="my-4" align="center"></p-skeleton>
+    </div>
+    <div *ngIf="public_repos > 0">
+        <pagination-controls (pageChange)="pageChangeEvent($event)" [autoHide]="true" [responsive]="true"
+            previousLabel="Older" nextLabel="Newer" class="my-pagination" align="center"></pagination-controls>
+    </div>
+    
+</div>

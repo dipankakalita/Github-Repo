@@ -1,0 +1,33 @@
+<p-toast position="top-right"></p-toast>
+<div>
+    <div class="grid">
+        <div class="col-12 md:col-5 lg:col-4 xl:col-3  flex-none flex align-items-center justify-content-center px-5 py-3">
+            <p-skeleton *ngIf="avatar_url==''" shape="circle" size="20vw"></p-skeleton>
+            <img *ngIf="avatar_url!=''" [src]="avatar_url" alt="Image" width="300vw" class="profile_pc">
+        </div>
+        <div class="col-12 md:col-7 lg:col-8 xl:col-9  flex flex-column align-items-start justify-content-center px-5 py-3">
+            <div>
+                <p-skeleton *ngIf="name==''" width="20vw" height="40px" styleClass="mb-4"></p-skeleton>
+                <p-skeleton *ngIf="bio==''" width="50vw" height="25px" styleClass="mb-2"></p-skeleton>
+                <p-skeleton *ngIf="location==''" width="30vw" height="25px" styleClass="mb-2"></p-skeleton>
+                <p-skeleton *ngIf="twitter_username==''" width="30vw" height="25px" styleClass="mb-2"></p-skeleton>
+                <h1 class="text-2xl" *ngIf="name!=''">{{name}}</h1>
+                <p class="text-sm" *ngIf="bio != ''">{{bio}}</p>
+                <p class="text-sm" *ngIf="location != '' && location != null"><i class="pi pi-map-marker text-sm"></i>
+                    {{location}}</p>
+                <p class="text-sm" *ngIf="twitter_username!='' && twitter_username != null">Twitter:
+                    <label><a [href]="'https://twitter.com/'+twitter_username" class="no-underline" target="_blank">https://twitter.com/{{twitter_username}}</a></label>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="flex-grow-1 flex flex-column align-items-start justify-content-center px-5">
+            <div>
+                <p-skeleton *ngIf="gitURL==''" width="30vw" height="25px" styleClass="mb-2"></p-skeleton>
+                <p class="text-sm" *ngIf="gitURL!=''"><a [href]="gitURL" class="no-underline" target="_blank"><i class="pi pi-link" style="margin-right: 10px;"></i>{{gitURL}}</a></p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="box">
+    <p-card class="w-10 md:w-8 border-1">
+        <div class=" flex flex-column justify-content-center align-items-center">
+            <img src="assets/404.svg" alt="404 error" class="-mt-6 w-10 md:w-6">
+            <h1 class="text-xs sm:text-lg md:text-xl lg:text-2xl text-center -mt-3 md:-mt-4 sm:-mt-5 lg:-mt-5 mb-4 md:mb-5">We couldn't find any repositories matching in given username</h1>
+            <form (submit)="search(input); $event.preventDefault()" class="w-12 md:w-10 lg:w-5">
+                <div class="p-inputgroup mr-2">
+                    <input type="text" pInputText class="p-inputtext-sm" placeholder="Github Username" #input>
+                    <button type="submit" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+                </div>
+            </form>
+        </div>        
+    </p-card>
+</div>

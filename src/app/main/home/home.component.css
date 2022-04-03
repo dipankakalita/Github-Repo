@@ -1,0 +1,22 @@
+.box{
+    min-height: 85vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+.text_box{
+    padding: 10vw;
+    overflow-x: hidden;
+}
+
+.img_box{
+    padding: 5vw;
+}
+h1 {
+    padding: 0;
+    margin: 0;
+}
+p {
+    font-size: 20px;
+    text-align: justify;
+    margin-bottom: 30px;
+}

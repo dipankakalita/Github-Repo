@@ -1,0 +1,16 @@
+<div class="grid box">
+    <div class="col-12 lg:col-6 flex flex-column justify-content-center text_box">
+        <h1 class="sm:text-6xl md:text-6xl lg:text-7xl">Where the world builds software</h1>
+        <p class="text-sm sm:text-base md:text-xl lg:text-xl">Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced
+        development platform in the world.</p>
+        <form (submit)="search(input); $event.preventDefault()">
+            <div class="p-inputgroup mr-2">
+                <input type="text" pInputText class="p-inputtext-sm" placeholder="Github Username" #input>
+                <button type="submit" pButton pRipple icon="pi pi-search" styleClass="p-button-warn"></button>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 lg:col-6 img_box flex flex-column justify-content-center align-items-center">
+        <img class="img-fluid" src="assets/world.svg" alt="world" class="w-9 lg:w-12">
+    </div>
+</div>
